@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 
@@ -14,11 +14,18 @@ const Home = () => {
         setBlogs(newBlog)
     }
 
+    const [name, setName] = useState('Hamid')
+
+useEffect(() => {
+    console.log("UseEffect ran");
+}, [blogs])
 
     return (
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
             {/* <BlogList blogs={blogs.filter((blog) => blog.successor === "Child")} title="Another Blogs" /> */}
+            <button onClick={() => setName('Sulaiman')}>Change Name</button>
+            <p>{name}</p>
         </div>
     )
 }
