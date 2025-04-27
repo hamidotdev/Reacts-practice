@@ -18,7 +18,8 @@ const Home = () => {
 
 useEffect(() => {
     console.log("UseEffect ran");
-}, [blogs])
+}, [blogs]) //empty dependency array [only run once when the component mounts]
+
 
     return (
         <div className="home">
